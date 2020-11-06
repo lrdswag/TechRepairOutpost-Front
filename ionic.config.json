@@ -1,0 +1,7 @@
+{
+  "name": "TechRepairOutpost",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
