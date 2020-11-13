@@ -1,0 +1,63 @@
+<app-header [title]="['Repairs List']"></app-header>
+
+<ion-content>
+  <ng-template #loading>
+    <ion-card style="padding: 2rem; margin-top: 3rem;">
+      <ion-card-header>
+        <ion-card-title class="ion-text-center">Loading Suppliers...</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-spinner style="position: absolute; left: 45%; right: 45%"></ion-spinner>
+      </ion-card-content>
+    </ion-card>
+  </ng-template>
+
+  <div *ngIf="repairs else loading">
+  <ion-list>
+  <ion-grid>
+    <ion-row>
+      <ion-col><ion-text>Customer Name</ion-text></ion-col>
+      <ion-col><ion-text>Device Repaired</ion-text></ion-col>
+      <ion-col><ion-text>Repair Type</ion-text></ion-col>
+      <ion-col><ion-text>Warranty Repair</ion-text></ion-col>
+      <ion-col><ion-text>Date Received</ion-text></ion-col>
+      <ion-col><ion-text>Date Repaired</ion-text></ion-col>
+    </ion-row>
+    <div *ngFor="let repair of repairs">
+    <ion-item [routerLink]="['/admin/repairs/', repair.id, 'view']" detail="true">
+    <ion-row>
+      <ion-col>
+        <ion-text>{{repair.customer.firstName}} {{repair.customer.lastName}}</ion-text>
+      </ion-col>
+      <ion-col>
+        <ion-text>{{repair.deviceInForRepair.Brand}} - {{repair.deviceInForRepair.Model}}</ion-text>
+      </ion-col>
+      <ion-col>
+        <ion-text>{{repair.repairType}}</ion-text>
+      </ion-col>
+      <ion-col *ngIf="repair.warrantyRepair === true">
+        <ion-icon name="checkmark-circle-outline"></ion-icon>
+      </ion-col>
+      <ion-col *ngIf="repair.warrantyRepair === false">
+        <ion-icon name="close-circle-outline"></ion-icon>
+      </ion-col>
+      <ion-col>
+        <ion-text>{{repair.dateRepairReceived}}</ion-text>
+      </ion-col>
+      <ion-col>
+        <ion-text>{{repair.dateDeviceCompleted}}</ion-text>
+      </ion-col>
+    </ion-row>
+    </ion-item>
+    </div>
+  </ion-grid>
+  </ion-list>
+  </div>
+</ion-content>
+<ion-footer [translucent]="true">
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-back-button text="Back" defaultHref="/admin/repairs"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

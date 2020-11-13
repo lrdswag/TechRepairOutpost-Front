@@ -1,0 +1,183 @@
+<app-header [title]="['Our Services']"></app-header>
+<ion-content>
+
+  <ion-card>
+  <ion-card-header>
+    <ion-item
+      lines="none" color="danger" style="border-radius: 5px" detail="true"
+      [routerLink]="['/nintendo']">
+      <ion-label class="ion-text-center" style="font-family: Itim, sans-serif">
+        <strong>Nintendo Switch</strong>
+      </ion-label>
+    </ion-item>
+  </ion-card-header>
+  <ion-card-content
+    style="background-image: url('assets/img/switch.png');
+    background-repeat: no-repeat;
+    background-size: 8rem 8rem;
+    background-position: right;">
+    <ul style="font-family: Itim, sans-serif">
+      <li>Power Issues</li>
+      <li>Display Issues</li>
+      <li>JoyCon Issues</li>
+      <li>No Problem!</li>
+    </ul>
+    <div style="height: 1rem;"></div>
+  </ion-card-content>
+</ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-item lines="none" color="success" style="border-radius: 5px" detail="true"
+      [routerLink]="['/xbox']">
+        <ion-label class="ion-text-center" style="font-family: Itim, sans-serif">
+          <strong>Microsoft Xbox One</strong>
+        </ion-label>
+      </ion-item>
+    </ion-card-header>
+    <ion-card-content
+    style="background-image: url('assets/img/xbox.png');
+    background-repeat: no-repeat;
+    background-size: 8rem 8rem;
+    background-position: right;">
+      <ul style="font-family: Itim, sans-serif">
+        <li>Disc Drive Related Issues</li>
+        <li>Display Related Issues</li>
+        <li>Power Related Issues</li>
+        <li>Hard Drive Problems</li>
+        <li>No Problem!</li>
+      </ul>
+      <div style="height: 1rem;"></div>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-item color="primary" lines="none" style="border-radius: 5px" detail="true"
+      [routerLink]="['/playstation']">
+        <ion-label class="ion-text-center" style="font-family: Itim, sans-serif">
+          <strong>Sony PlayStation</strong>
+        </ion-label>
+      </ion-item>
+    </ion-card-header>
+    <ion-card-content
+    style="background-image: url('assets/img/playstation.png');
+    background-repeat: no-repeat;
+    background-size: 8rem 8rem;
+    background-position: right;">
+      <ul style="font-family: Itim, sans-serif">
+        <li>Blue Light of Death</li>
+        <li>HDMI Port Repairs</li>
+        <li>Overheating Issues</li>
+        <li>No Problem!</li>
+      </ul>
+      <div style="height: 1rem;"></div>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-item lines="none" color="success" style="border-radius: 5px" detail="true"
+                [routerLink]="['/mobile']">
+        <ion-label class="ion-text-center" style="font-family: Itim, sans-serif">
+          <strong>Mobile Device</strong>
+        </ion-label>
+      </ion-item>
+    </ion-card-header>
+    <ion-card-content
+    style="background-image: url('assets/img/mobile.png');
+    background-repeat: no-repeat;
+    background-size: 8rem 8rem;
+    background-position: right;">
+      <ul style="font-family: Itim, sans-serif">
+        <li>Replace Damaged/Faulty LCD Screens</li>
+        <li>Battery Replacements</li>
+        <li>Motherboard Repairs</li>
+        <li>Case Repair/Replacement</li>
+        <li>No Problem!</li>
+      </ul>
+      <div style="height: 1rem;"></div>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-item lines="none" color="medium" style="border-radius: 5px" detail="true"
+      [routerLink]="['/recovery']">
+        <ion-label class="ion-text-center" style="font-family: Itim, sans-serif">
+          <strong>HDD Data Recovery</strong>
+        </ion-label>
+      </ion-item>
+    </ion-card-header>
+    <ion-card-content
+    style="background-image: url('assets/img/hdd.png');
+    background-repeat: no-repeat;
+    background-size: 8rem 8rem;
+    background-position: right;">
+      <ul style="font-family: Itim, sans-serif">
+        <li>Lost precious family photos?</li>
+        <li>Lost important documents?</li>
+        <li>It's possible to save them!</li>
+        <li>Find out more!</li>
+      </ul>
+      <div style="height: 1rem;"></div>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-item lines="none" color="secondary" style="border-radius: 5px" detail="true"
+                [routerLink]="['/other']">
+        <ion-label class="ion-text-center" style="font-family: Itim, sans-serif">
+          <strong>Laptop's & PC's</strong>
+        </ion-label>
+      </ion-item>
+    </ion-card-header>
+    <ion-card-content
+      style="background-image: url('assets/img/pc-laptop.png');
+    background-repeat: no-repeat;
+    background-size: 8rem 8rem;
+    background-position: right;">
+      <ul style="font-family: Itim, sans-serif">
+        <li>Software or Hardware issues? We have it sorted!</li>
+        <li>General repairs</li>
+        <li>Upgrade Parts</li>
+        <li>Virus Removal</li>
+        <li>Performance optimization</li>
+        <li>Find out more!</li>
+      </ul>
+      <div style="height: 1rem;"></div>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-item lines="none" color="dark" style="border-radius: 5px" detail="true"
+      [routerLink]="['/apple']">
+        <ion-label class="ion-text-center" style="font-family: Itim, sans-serif">
+          <strong>iMacs & Macbooks</strong>
+        </ion-label>
+      </ion-item>
+    </ion-card-header>
+    <ion-card-content
+    style="background-image: url('assets/img/mac.png');
+    background-repeat: no-repeat;
+    background-size: 8rem 8rem;
+    background-position: right;">
+      <ul style="font-family: Itim, sans-serif">
+        <li>Software or Hardware issues? We have it sorted!</li>
+        <li>Wrangling the<br />iOS of the Macs<br />is one of our<br />specialties!</li>
+        <li>Find out more!</li>
+      </ul>
+      <div style="height: 1rem;"></div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<ion-footer [translucent]="true">
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+    <ion-back-button style="font-family: Itim, sans-serif; font-size: 0.9rem;" text="Back" defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

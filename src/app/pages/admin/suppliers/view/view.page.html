@@ -1,0 +1,66 @@
+<app-header [title]="['Supplier Details']"></app-header>
+
+<ion-content>
+  <ng-template #loading>
+    <ion-card style="padding: 2rem; margin-top: 3rem;">
+      <ion-card-header>
+        <ion-card-title class="ion-text-center">Loading Supplier Data...</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-spinner style="position: absolute; left: 45%; right: 45%"></ion-spinner>
+      </ion-card-content>
+    </ion-card>
+  </ng-template>
+
+  <ion-card *ngIf="supplier else loading" style="position: absolute; top: 25%; left:5%; right: 5%;">
+    <ion-card-header>
+      <ion-title style="font-family: Itim, sans-serif">{{supplier.name}}</ion-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label style="font-family: Itim, sans-serif">Contact Number:</ion-label>
+        <ion-label style="font-family: Itim, sans-serif">{{supplier.contactNumber}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label style="font-family: Itim, sans-serif">Email:</ion-label>
+        <ion-label style="font-family: Itim, sans-serif">{{supplier.email}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label style="font-family: Itim, sans-serif">Contact Person:</ion-label>
+        <ion-label style="font-family: Itim, sans-serif">{{supplier.contactPerson}}</ion-label>
+      </ion-item>
+      <div *ngIf="parts">
+        <ion-item color="light" lines="none"><ion-label style="font-family: Itim, sans-serif; text-align: center;">Parts Offered</ion-label></ion-item>
+      <div *ngFor="let part of parts">
+      <ion-item detail="true" [routerLink]="['/admin/inventory/', part.id, 'view']" lines="indent">
+        <ion-label style="font-family: Itim, sans-serif">{{part.partName}}</ion-label>
+      </ion-item>
+      </div>
+      </div>
+    </ion-card-content>
+    <ion-item lines="none">
+      <ion-col size="6">
+        <ion-button color="warning" size="block" [routerLink]="['/admin/suppliers/', supplier.id, 'edit']">
+          <ion-label style="font-family: Itim, sans-serif">Edit</ion-label>
+          <ion-icon name="create-outline" slot="start"></ion-icon>
+        </ion-button>
+      </ion-col>
+      <ion-col size="6">
+        <ion-button color="danger" size="block" [routerLink]="['/admin/suppliers/', supplier.id, 'delete']">
+          <ion-label style="font-family: Itim, sans-serif">Delete</ion-label>
+          <ion-icon name="trash-outline" slot="start"></ion-icon>
+          <ion-ripple-effect type="unbounded"></ion-ripple-effect>
+        </ion-button>
+      </ion-col>
+    </ion-item>
+  </ion-card>
+
+</ion-content>
+
+<ion-footer [translucent]="true">
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-back-button style="font-family: Quicksand, sans-serif; font-size: 0.8rem;" text="Back" defaultHref="/admin/suppliers"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

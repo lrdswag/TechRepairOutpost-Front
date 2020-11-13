@@ -1,0 +1,39 @@
+<app-header [title]="['Delete Device?']"></app-header>
+
+<ion-content>
+
+  <ion-card *ngIf="device">
+    <ion-card-header>Device Details</ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label>Brand:</ion-label>
+        <ion-label>{{device.brand}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Model:</ion-label>
+        <ion-label>{{device.model}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Series:</ion-label>
+        <ion-label>{{device.series}}</ion-label>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-col size="12">
+          <ion-button size="block" color="danger">
+            <ion-icon name="trash-outline" slot="start"></ion-icon>
+            <ion-label>Delete</ion-label>
+          </ion-button>
+        </ion-col>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
+
+<ion-footer [translucent]="true">
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-back-button text="Back" defaultHref="/admin"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

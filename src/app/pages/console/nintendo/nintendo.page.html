@@ -1,0 +1,60 @@
+<app-header [title]="['Nintendo']">0</app-header>
+<ion-content>
+<ion-card>
+  <ion-list>
+    <ion-item lines="none">
+      <ion-img src="assets/img/switch.png" style="height: 4rem; width: 4rem;"></ion-img>
+      <ion-label style="margin-left: 2rem; font-family: Quicksand, sans-serif;">
+        <strong>Nintendo - Services</strong>
+      </ion-label>
+    </ion-item>
+    <ion-item color="light">
+      <ion-label style="text-align: center; font-family: Quicksand, sans-serif;">Devices Repaired</ion-label>
+    </ion-item>
+    <ion-item lines="indent">
+      <ion-label style="font-family: Quicksand, sans-serif;" color="secondary">Nintendo Switch</ion-label>
+    </ion-item>
+    <ion-item lines="indent">
+      <ion-label style="font-family: Quicksand, sans-serif;" color="danger">Nintendo Switch Lite</ion-label>
+    </ion-item>
+    <ion-item lines="none"></ion-item>
+    <ion-item lines="none">
+      <ion-text style="font-family: Quicksand, sans-serif;">
+        The Nintendo Switch and its little cousin the Nintendo Switch Lite are wonderful pieces of technology and have changed how people interact with games.
+        But, unfortunately with the smaller size motherboards they use, there becomes a risk of physical damage.
+        They have delicate ports, and can be victim of an array of different power issues.
+        <hr />
+        Battery Issues are something that I can confidently repair. With the quality batteries provided by Tech Repair Outpost,
+        we will have it working like new again and back in to your hands.
+        Also, gameslots are susceptible to becoming jammed and causing damage to the pin connectors that are responsible for reading game data.
+        <hr />
+        Smashed or cracked LCD display? No problem!
+      </ion-text>
+    </ion-item>
+    <ion-item lines="none"></ion-item>
+    <ion-item>
+      <ion-col size="12">
+        <ion-button color="success" size="block">
+          <ion-label style="font-family: Quicksand, sans-serif; font-size: 0.9rem;">Book Your Nintendo for Repair</ion-label>
+          <ion-icon name="build-outline" slot="start"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-col size="12">
+        <ion-button size="block" color="secondary">
+          <ion-icon name="call-outline" slot="start"></ion-icon>
+          <ion-label style="font-family: Quicksand, sans-serif; font-size: 0.9rem;">Question? Contact Us</ion-label>
+        </ion-button>
+      </ion-col>
+    </ion-item>
+  </ion-list>
+</ion-card>
+</ion-content>
+<ion-footer [translucent]="true">
+  <ion-toolbar color="tertiary">
+    <ion-buttons>
+      <ion-back-button style="font-family: Quicksand, sans-serif; font-size: 0.9rem;" text="Back" defaultHref="/services"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

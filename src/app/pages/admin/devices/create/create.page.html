@@ -1,0 +1,38 @@
+<app-header [title]="['New Device Form']"></app-header>
+
+<ion-content>
+
+<ion-card style="padding-top: 1rem; padding-bottom: 1rem; margin-top: 5rem;">
+  <form [formGroup]="form" (ngSubmit)="onAddDevice()">
+    <ion-item>
+      <ion-label style="font-family: Itim, sans-serif;" position="stacked">Brand:</ion-label>
+      <ion-input style="font-family: Itim, sans-serif;" formControlName="brand"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label style="font-family: Itim, sans-serif;" position="stacked">Model:</ion-label>
+      <ion-input style="font-family: Itim, sans-serif;" formControlName="model"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label style="font-family: Itim, sans-serif;" position="stacked">Series:</ion-label>
+      <ion-input style="font-family: Itim, sans-serif;" formControlName="series"></ion-input>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-col size="12">
+        <ion-button color="success" type="submit" size="block">
+          <ion-label style="font-family: Itim, sans-serif; font-size: 0.8rem;">Add Device</ion-label>
+          <ion-icon name="add-circle-outline" slot="start"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-item>
+  </form>
+</ion-card>
+
+</ion-content>
+
+<ion-footer [translucent]="true">
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-back-button text="Back" defaultHref="/admin/devices"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

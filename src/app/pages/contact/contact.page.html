@@ -1,0 +1,61 @@
+<app-header [title]="['Contact']"></app-header>
+
+<ion-content>
+<ion-card style="padding-top: 2rem;">
+  <ion-item lines="none">
+    <ion-label style="font-family: Quicksand, sans-serif; font-size: 1.5rem; text-align: center; margin-bottom: 2rem;">
+      <strong>Contact Us Now!</strong>
+    </ion-label>
+  </ion-item>
+  <ion-item lines="indent" color="secondary">
+    <ion-label style="font-family: Itim, sans-serif; text-align: center;">Our Details</ion-label>
+  </ion-item>
+  <ion-item lines="none" color="light">
+    <ion-label style="font-family: Itim, sans-serif; text-align: center;" >
+      Shop 8, 101/1 Aspinall Street <br/>
+      Nundah QLD 4012 <br />
+      T: 123-456-7890 <br />
+      F: 123-456-7890 <br />
+      info@techrepairoutpost.com
+    </ion-label>
+  </ion-item>
+  <ion-item lines="indent" color="secondary">
+    <ion-label style="font-family: Itim, sans-serif; text-align: center;">Or Message Us Below!</ion-label>
+  </ion-item>
+  <ion-item lines="none"></ion-item>
+  <ion-card-content>
+    <ion-item lines="none">
+      <ion-icon name="person-circle-outline" slot="start"></ion-icon>
+          <ion-label style="font-family: Itim, sans-serif;" position="stacked">Name</ion-label>
+          <ion-input></ion-input>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-icon name="mail-outline" slot="start"></ion-icon>
+      <ion-label style="font-family: Itim, sans-serif;" position="stacked">Email</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked" style="font-family: Itim, sans-serif;">Subject</ion-label>
+      <ion-select>
+        <ion-select-option style="font-family: Itim, sans-serif;">Product Query</ion-select-option>
+        <ion-select-option style="font-family: Itim, sans-serif;">Repair Query</ion-select-option>
+        <ion-select-option style="font-family: Itim, sans-serif;">Inventory Query</ion-select-option>
+        <ion-select-option style="font-family: Itim, sans-serif;">Contact Request</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item lines="none"></ion-item>
+    <ion-item>
+      <ion-label position="stacked" style="font-family: Itim, sans-serif;">Message</ion-label>
+      <ion-textarea></ion-textarea>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-col size="12">
+        <ion-button size="block" color="success">
+          <ion-icon name="paper-plane-outline" slot="end"></ion-icon>
+          <ion-label style="font-family: Itim, sans-serif; font-size: 0.9rem;">Send</ion-label>
+        </ion-button>
+      </ion-col>
+    </ion-item>
+  </ion-card-content>
+</ion-card>
+</ion-content>

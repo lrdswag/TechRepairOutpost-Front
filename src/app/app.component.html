@@ -1,3 +1,98 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+
+  <ion-split-pane contentId="main-content">
+    <ion-menu contentId="main-content" menu-id="first" side="start">
+
+      <ion-content>
+        <ion-list lines="none">
+          <ion-item lines="full" [routerLink]="['/home']" detail="false" color="light">
+            <ion-ripple-effect></ion-ripple-effect>
+            <ion-img src="assets/tech-repair-logo.svg" slot="start" style="height: 6rem; width: 6rem;"></ion-img>
+            <ion-label style="font-family: Itim, sans-serif; font-size: 0.9rem; text-align: right" color="tertiary">Premium Repairs</ion-label>
+          </ion-item>
+          <ion-menu-toggle autoHide="false">
+            <ion-item routerLinkActive="selected" routerDirection="root" detail="false">
+            </ion-item>
+
+          </ion-menu-toggle>
+        </ion-list>
+
+        <ion-list lines="none">
+
+          <ion-menu-toggle autoHide="false">
+            <ion-item [routerLink]="['/services']" routerLinkActive="active" routerDirection="root" detail="false" lines="inset">
+              <ion-icon slot="start" src="assets/icons/icons8-services.svg"></ion-icon>
+              <ion-ripple-effect></ion-ripple-effect>
+              <ion-label style="font-family: Itim, sans-serif">
+                Services
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+
+          <ion-menu-toggle autoHide="false">
+            <ion-item [routerLink]="['/bookings']" routerLinkActive="active" routerDirection="root" detail="false" lines="inset">
+              <ion-icon slot="start" src="assets/icons/icons8-online-package-tracking.svg"></ion-icon>
+              <ion-ripple-effect></ion-ripple-effect>
+              <ion-label style="font-family: Itim, sans-serif">
+                Book Online
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+
+          <ion-menu-toggle autoHide="false">
+            <ion-item [routerLink]="['/contact']" detail="false" lines="inset">
+              <ion-icon slot="start" src="assets/icons/icons8-call.svg"></ion-icon>
+              <ion-ripple-effect></ion-ripple-effect>
+              <ion-label style="font-family: Itim, sans-serif">
+                Contact
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+
+          <ion-menu-toggle autoHide="false">
+            <ion-item [routerLink]="['/about']" routerLinkActive="active" routerDirection="root" detail="false" lines="inset">
+              <ion-icon slot="start" src="assets/icons/icons8-about.svg"></ion-icon>
+              <ion-ripple-effect></ion-ripple-effect>
+              <ion-label style="font-family: Itim, sans-serif">
+                About
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+
+        <ion-list lines="none">
+
+          <ion-menu-toggle autoHide="false">
+            <ion-item [routerLink]="['/signup']" routerLinkActive="active" routerDirection="root" detail="false" lines="inset">
+              <ion-icon slot="start" src="assets/icons/icons8-add-user-male.svg"></ion-icon>
+              <ion-ripple-effect></ion-ripple-effect>
+              <ion-label style="font-family: Itim, sans-serif">
+                Signup
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+
+          <ion-menu-toggle autoHide="false">
+            <ion-item [routerLink]="['/login']" detail="false" lines="inset">
+              <ion-icon slot="start" src="assets/icons/icons8-login.svg"></ion-icon>
+              <ion-ripple-effect></ion-ripple-effect>
+              <ion-label style="font-family: Itim, sans-serif">Login</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+
+          <ion-menu-toggle autoHide="false">
+            <ion-item [routerLink]="['/admin']" detail="false" lines="inset">
+              <ion-icon slot="start" src="assets/icons/icons8-login.svg"></ion-icon>
+              <ion-ripple-effect></ion-ripple-effect>
+              <ion-label style="font-family: Itim, sans-serif">Admin</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+
+  </ion-split-pane>
+
 </ion-app>

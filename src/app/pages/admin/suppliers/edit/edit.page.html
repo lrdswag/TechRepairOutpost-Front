@@ -1,0 +1,72 @@
+<app-header [title]="['Edit Supplier Details']"></app-header>
+
+<ion-content>
+  <ng-template #loading>
+    <ion-card style="padding: 2rem; margin-top: 3rem;">
+      <ion-card-header>
+        <ion-card-title class="ion-text-center">Loading Supplier Details...</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-spinner style="position: absolute; left: 45%; right: 45%"></ion-spinner>
+      </ion-card-content>
+    </ion-card>
+  </ng-template>
+
+<ion-card *ngIf="supplier else loading" style="position: absolute; top: 10%; left:5%; right: 5%;">
+  <form [formGroup]="form" (ngSubmit)="onEditSupplier()">
+  <ion-card-content>
+
+      <ion-input style="font-family: Itim, sans-serif" type="hidden" [ngModel]="supplier.id" value="{{supplier.id}}" formControlName="id"></ion-input>
+
+    <ion-item>
+      <ion-label style="font-family: Itim, sans-serif" color="medium" position="stacked">Edit Supplier Name</ion-label>
+      <ion-input style="font-family: Itim, sans-serif" [ngModel]="supplier.name" formControlName="name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label style="font-family: Itim, sans-serif" color="medium" position="stacked">Edit Supplier Contact Number</ion-label>
+      <ion-input style="font-family: Itim, sans-serif" [ngModel]="supplier.contactNumber" formControlName="contactNumber"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label style="font-family: Itim, sans-serif" color="medium" position="stacked">Edit Supplier Email</ion-label>
+      <ion-input style="font-family: Itim, sans-serif" [ngModel]="supplier.email" formControlName="email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label style="font-family: Itim, sans-serif" color="medium" position="stacked">Edit Supplier Contact Person</ion-label>
+      <ion-input style="font-family: Itim, sans-serif" [ngModel]="supplier.contactPerson" formControlName="contactPerson"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label style="font-family: Itim, sans-serif" position="stacked">Parts Offered</ion-label>
+      <ion-select formControlName="partsOffered" multiple="true">
+        <div *ngFor="let part of parts">
+          <ion-select-option style="font-family: Itim, sans-serif" value="/parts/{{part.id}}">{{part.partName}}</ion-select-option>
+        </div>
+      </ion-select>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-col size="12">
+        <ion-button color="success" size="block" type="submit">
+          <ion-ripple-effect type="unbounded"></ion-ripple-effect>
+          <ion-icon name="checkmark-outline" slot="start"></ion-icon>
+          <ion-label style="font-family: Itim, sans-serif">Save Changes</ion-label>
+        </ion-button>
+      </ion-col>
+    </ion-item>
+
+  </ion-card-content>
+  </form>
+  {{form.value | json}}
+</ion-card>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-back-button style="font-family: Itim, sans-serif" text="Back" defaultHref="/admin/suppliers"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,39 @@
+<app-header [title]="['Delete User?']"></app-header>
+
+<ion-content>
+<div *ngIf="user">
+  <ion-card>
+    <ion-item style="font-family: Quicksand, sans-serif;">
+      <ion-label>First Name:</ion-label>
+      <ion-label>{{user.FirstName}}</ion-label>
+    </ion-item>
+    <ion-item style="font-family: Quicksand, sans-serif;">
+      <ion-label>Last Name:</ion-label>
+      <ion-label>{{user.LastName}}</ion-label>
+    </ion-item>
+    <ion-item style="font-family: Quicksand, sans-serif;">
+      <ion-label>Email:</ion-label>
+      <ion-label>{{user.email}}</ion-label>
+    </ion-item>
+    <ion-item style="font-family: Quicksand, sans-serif;">
+      <ion-label>Contact Number:</ion-label>
+      <ion-label>{{user.ContactNumber}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-col size="12">
+        <ion-button (click)="onDeleteUser(user.id)" type="submit" color="danger" size="block">
+          <ion-label>Delete User</ion-label>
+        </ion-button>
+      </ion-col>
+    </ion-item>
+  </ion-card>
+</div>
+</ion-content>
+
+<ion-footer [translucent]="true">
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-back-button text="Back" defaultHref="/admin/users"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

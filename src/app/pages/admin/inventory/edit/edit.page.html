@@ -1,0 +1,37 @@
+<app-header [title]="['Edit Inventory Details']"></app-header>
+
+<ion-content>
+<ion-card *ngIf="inventory">
+  <form [formGroup]="form" (ngSubmit)="onEditInventoryItem()">
+      <ion-input type="hidden" formControlName="id" [(ngModel)]="inventory.id" value="{{inventory.id}}"></ion-input>
+    <ion-item>
+      <ion-label position="stacked">Part Name</ion-label>
+      <ion-input [(ngModel)]="inventory.partName" formControlName="partName"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Part Description</ion-label>
+      <ion-textarea [(ngModel)]="inventory.partDescription" formControlName="partDescription"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">IMG Url</ion-label>
+      <ion-input formControlName="imgUrl" [(ngModel)]="inventory.imgUrl"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Devices Compatible With</ion-label>
+      <ion-select multiple="true" [(ngModel)]="inventory.devicesCompatibleWith.id" formControlName="devicesCompatibleWith">
+        <div *ngFor="let device of devices">
+          <ion-select-option value="/devices/{{device.id}}">{{device.brand}} {{device.model}} {{device.series}}</ion-select-option>
+        </div>
+      </ion-select>
+    </ion-item>
+  </form>
+</ion-card>
+</ion-content>
+
+<ion-footer [translucent]="true">
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-back-button text="Back"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

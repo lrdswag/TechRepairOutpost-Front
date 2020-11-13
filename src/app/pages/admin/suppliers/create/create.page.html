@@ -1,0 +1,44 @@
+<app-header [title]="['Add New Supplier']"></app-header>
+
+<ion-content>
+<ion-card style="position: absolute; top: 25%; left:5%; right: 5%;">
+  <ion-item lines="none" color="medium">
+    <ion-title style="font-family: Itim, sans-serif">New Supplier Form</ion-title>
+  </ion-item>
+  <form [formGroup]="form" (ngSubmit)="onAddSupplier()">
+    <ion-item style="font-family: Itim, sans-serif">
+      <ion-label style="font-family: Itim, sans-serif" position="stacked">Supplier Name:</ion-label>
+      <ion-input style="font-family: Itim, sans-serif" formControlName="name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label style="font-family: Itim, sans-serif" position="stacked">Contact Number:</ion-label>
+      <ion-input style="font-family: Itim, sans-serif" formControlName="contactNumber"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label style="font-family: Itim, sans-serif" position="stacked">Contact Person:</ion-label>
+      <ion-input style="font-family: Itim, sans-serif" formControlName="contactPerson"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label style="font-family: Itim, sans-serif" position="stacked">Email:</ion-label>
+      <ion-input style="font-family: Itim, sans-serif" formControlName="email"></ion-input>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-col size="12">
+        <ion-button size="block" type="submit" color="success">
+          <ion-ripple-effect type="unbounded"></ion-ripple-effect>
+          <ion-icon name="add-circle-outline" slot="start"></ion-icon>
+          <ion-label style="font-family: Itim, sans-serif">Add Supplier</ion-label>
+        </ion-button>
+      </ion-col>
+    </ion-item>
+  </form>
+</ion-card>
+</ion-content>
+
+<ion-footer [translucent]="true">
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-back-button style="font-family: Quicksand, sans-serif; font-size: 0.8rem;" text="Back" defaultHref="/admin/suppliers"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

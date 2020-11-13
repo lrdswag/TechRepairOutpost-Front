@@ -1,0 +1,25 @@
+<app-header [title]="['Bookings - Admin']"></app-header>
+
+<ion-content>
+<ion-card>
+  <ion-item detail="true" [routerLink]="['/admin/bookings/list']">
+    <ion-label style="font-family: Itim, sans-serif;">Bookings List</ion-label>
+    <ion-icon name="list-outline" slot="start"></ion-icon>
+  </ion-item>
+  <ion-item detail="true" [routerLink]="['/admin/bookings/create']">
+    <ion-icon slot="start" name="add-circle-outline"></ion-icon>
+    <ion-label style="font-family: Itim, sans-serif;">Add Booking</ion-label>
+  </ion-item>
+  <ion-item detail="true" [routerLink]="['/admin/bookings/calendar']">
+    <ion-icon name="calendar-outline" slot="start"></ion-icon>
+    <ion-label style="font-family: Itim, sans-serif;">Bookings Calendar</ion-label>
+  </ion-item>
+</ion-card>
+</ion-content>
+<ion-footer [translucent]="true">
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-back-button text="Back" defaultHref="/admin"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

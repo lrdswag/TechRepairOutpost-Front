@@ -1,0 +1,45 @@
+<app-header [title]="['Edit Device Details']"></app-header>
+<ion-content>
+
+  <div *ngIf="device">
+  <ion-card>
+    <form [formGroup]="form" (ngSubmit)="onEditDevice()">
+
+      <ion-input type="hidden" value="{{device.id}}" formControlName="id" [ngModel]="device.id"></ion-input>
+
+      <ion-item>
+        <ion-label style="font-family: Itim, sans-serif" position="stacked">Brand:</ion-label>
+        <ion-input style="font-family: Itim, sans-serif" [ngModel]="device.brand" formControlName="brand"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label style="font-family: Itim, sans-serif" position="stacked">Model:</ion-label>
+        <ion-input style="font-family: Itim, sans-serif" [ngModel]="device.model" formControlName="model"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label style="font-family: Itim, sans-serif" position="stacked">Series:</ion-label>
+        <ion-input style="font-family: Itim, sans-serif" [ngModel]="device.series" formControlName="series"></ion-input>
+      </ion-item>
+
+    <ion-item lines="none">
+      <ion-col size="12">
+        <ion-button color="success" type="submit" size="block">
+          <ion-label style="font-family: Itim, sans-serif; font-size: 0.8rem;">Update Device</ion-label>
+        </ion-button>
+      </ion-col>
+    </ion-item>
+    </form>
+  </ion-card>
+
+  </div>
+</ion-content>
+
+
+<ion-footer>
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-back-button style="font-family: Quicksand, sans-serif; font-size: 0.8rem;" text="Back" defaultHref="/admin/devices/list"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

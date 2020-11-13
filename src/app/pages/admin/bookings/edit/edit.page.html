@@ -1,0 +1,39 @@
+<app-header [title]="['Edit Booking Details']"></app-header>
+
+<ion-content>
+<ion-card *ngIf="booking">
+  <form [formGroup]="form" (ngSubmit)="onEditBooking(booking.id)">
+  <ion-item lines="none" color="medium">
+    <ion-title>Booking Details</ion-title>
+  </ion-item>
+  <ion-item>
+    <ion-label>Customer</ion-label>
+    <ion-label>{{booking.customer.firstName}} {{booking.customer.lastName}}</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label>Date Of Appointment</ion-label>
+    <ion-input type="datetime-local" formControlName="dateOfAppointment"></ion-input>
+  </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Booking Confirmed</ion-label>
+      <ion-checkbox [ngModel]="booking.bookingConfirmed" value=true formControlName="bookingConfirmed"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Device</ion-label>
+      <ion-select formControlName="device">
+        <div *ngFor="let device of devices">
+        <ion-select-option value="{{device.id}}">{{device.brand}} {{device.model}} {{device.series}}</ion-select-option>
+        </div>
+      </ion-select>
+    </ion-item>
+  </form>
+</ion-card>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button text="Back" defaultHref="/admin/bookings"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

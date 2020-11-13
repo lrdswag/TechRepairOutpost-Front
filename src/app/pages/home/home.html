@@ -1,0 +1,97 @@
+<app-header [title]="['Home']"></app-header>
+
+<ion-content fullscreen="true">
+  <ion-slides pager="true" [options]="slideOpts">
+    <ion-slide>
+<ion-list>
+  <ion-item class="ion-text-center" lines="none" style="padding-top: 1.5rem;" color="light">
+    <ion-label style="font-family: Itim, sans-serif;">Welcome to</ion-label>
+    <ion-img style="height: 6rem; width: 6rem;" src="assets/img/tech-repair-logo.png"></ion-img>
+    <ion-label style="font-family: Itim, sans-serif;">Premium <br /> Repairs</ion-label>
+  </ion-item>
+  <ion-img src="assets/img/2.png"></ion-img>
+
+  <ion-item lines="none" style="position: absolute; bottom: 5%; left:5%; right: 5%">
+    <ion-col size="2"></ion-col>
+    <ion-col size="8">
+      <ion-button size="block" color="secondary" [routerLink]="['/services']">
+        <ion-ripple-effect></ion-ripple-effect>
+        <ion-icon name="rocket-outline" slot="start"></ion-icon>
+        <ion-label style="font-family: Itim, sans-serif; font-size: 0.8rem;">Find Out More!</ion-label>
+      </ion-button>
+    </ion-col>
+    <ion-col size="2"></ion-col>
+  </ion-item>
+</ion-list>
+    </ion-slide>
+
+    <ion-slide>
+<ion-list>
+  <ion-item lines="none" style="padding-top: 1.5rem;" color="light">
+    <ion-label style="font-family: Itim, sans-serif; margin-top: 1rem; text-align: center;">
+      <strong style="text-align: center">Data Recovery <br />Hardware Check</strong>
+      <br /><span style="font-size: 0.8rem;">Quoted in 30mins!</span>
+    </ion-label>
+  </ion-item>
+  <ion-img src="assets/img/3.png" ></ion-img>
+  <ion-item lines="none" style="position: absolute; bottom: 5%; left:5%; right: 5%">
+    <ion-col size="2"></ion-col>
+    <ion-col size="8">
+      <ion-button size="block" color="secondary" [routerLink]="['/recovery']">
+        <ion-ripple-effect></ion-ripple-effect>
+        <ion-icon name="rocket-outline" slot="start"></ion-icon>
+        <ion-label style="font-family: Itim, sans-serif; font-size: 0.8rem;">Find Out More!</ion-label>
+      </ion-button>
+    </ion-col>
+    <ion-col size="2"></ion-col>
+  </ion-item>
+</ion-list>
+
+    </ion-slide>
+
+    <ion-slide>
+      <ion-list>
+        <ion-item lines="none" style="padding-top: 1.5rem;" color="light">
+          <ion-label style="font-family: Itim, sans-serif; margin-top: 1rem; text-align: center;">
+            <strong style="text-align: center">Repairs and Maintenance<br />on Laptop's & PC's</strong>
+          </ion-label>
+        </ion-item>
+        <ion-img src="assets/img/4.png"></ion-img>
+        <ion-item lines="none" style="position: absolute; bottom: 5%; left:5%; right: 5%">
+          <ion-col size="2"></ion-col>
+          <ion-col size="8">
+            <ion-button size="block" color="secondary" [routerLink]="['/other']">
+              <ion-ripple-effect></ion-ripple-effect>
+              <ion-icon name="rocket-outline" slot="start"></ion-icon>
+              <ion-label style="font-family: Itim, sans-serif; font-size: 0.8rem;">Find Out More!</ion-label>
+            </ion-button>
+          </ion-col>
+          <ion-col size="2"></ion-col>
+        </ion-item>
+      </ion-list>
+    </ion-slide>
+
+    <ion-slide>
+      <ion-list>
+        <ion-item lines="none" style="padding-top: 1.5rem;" color="light">
+          <ion-label style="font-family: Itim, sans-serif; margin-top: 1rem; text-align: center;">
+            <strong style="text-align: center">Repairs and Maintenance<br />on iMac's & MacBook's</strong>
+          </ion-label>
+        </ion-item>
+        <ion-img src="assets/img/5.png"></ion-img>
+        <ion-item lines="none" style="position: absolute; bottom: 5%; left:5%; right: 5%">
+          <ion-col size="2"></ion-col>
+          <ion-col size="8">
+            <ion-button size="block" color="secondary" [routerLink]="['/apple']">
+              <ion-ripple-effect></ion-ripple-effect>
+              <ion-icon name="rocket-outline" slot="start"></ion-icon>
+              <ion-label style="font-family: Itim, sans-serif; font-size: 0.8rem;">Find Out More!</ion-label>
+            </ion-button>
+          </ion-col>
+          <ion-col size="2"></ion-col>
+        </ion-item>
+      </ion-list>
+    </ion-slide>
+  </ion-slides>
+</ion-content>
+

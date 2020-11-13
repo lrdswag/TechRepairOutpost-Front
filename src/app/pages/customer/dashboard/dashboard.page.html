@@ -1,0 +1,20 @@
+<app-header [title]="['Welcome!']"></app-header>
+
+<ion-content>
+<ion-card>
+  <ion-card-header>
+    <ion-title>Menu</ion-title>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-item [routerLink]="['/customer/bookings']">
+      <ion-label>Book Your Device In For Repair</ion-label>
+    </ion-item>
+    <ion-item [routerLink]="['/customer/repairs/']">
+      <ion-label>View Repair Status</ion-label>
+    </ion-item>
+    <ion-item [routerLink]="['/customer/details/']">
+      <ion-label>Edit Your Details</ion-label>
+    </ion-item>
+  </ion-card-content>
+</ion-card>
+</ion-content>

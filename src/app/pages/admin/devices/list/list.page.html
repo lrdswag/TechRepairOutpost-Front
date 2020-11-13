@@ -1,0 +1,68 @@
+<app-header [title]="['Device List']"></app-header>
+
+<ion-content>
+  <ng-template #loading>
+    <ion-card style="padding: 2rem; margin-top: 3rem;">
+      <ion-card-header>
+        <ion-card-title class="ion-text-center">Loading Devices...</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-spinner style="position: absolute; left: 45%; right: 45%"></ion-spinner>
+      </ion-card-content>
+    </ion-card>
+  </ng-template>
+
+<div *ngIf="devices else loading">
+  <div *ngFor="let device of devices">
+<ion-card>
+  <ion-card-header color="light">
+    <ion-title *ngIf="device.brand === 'Microsoft'" color="success" style="font-family: Itim, sans-serif;">{{device.brand}}</ion-title>
+    <ion-title *ngIf="device.brand === 'Sony'" color="primary" style="font-family: Itim, sans-serif;">{{device.brand}}</ion-title>
+    <ion-title *ngIf="device.brand === 'Nintendo'" color="danger" style="font-family: Itim, sans-serif;">{{device.brand}}</ion-title>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-item>
+      <ion-col size="5">
+      <ion-label style="font-family: Itim, sans-serif; text-align: right;">Model:</ion-label>
+      </ion-col>
+      <ion-col size="2"></ion-col>
+      <ion-col size="5">
+      <ion-label style="font-family: Itim, sans-serif;">{{device.model}}</ion-label>
+      </ion-col>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-col size="5">
+      <ion-label style="font-family: Itim, sans-serif; text-align: right;">Series:</ion-label>
+      </ion-col>
+      <ion-col size="2"></ion-col>
+      <ion-col size="5">
+      <ion-label style="font-family: Itim, sans-serif;">{{device.series}}</ion-label>
+      </ion-col>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-col size="6">
+        <ion-button size="block" color="warning" [routerLink]="['/admin/devices/', device.id, 'edit']">
+          <ion-label style="font-family: Itim, sans-serif;">Edit</ion-label>
+          <ion-icon name="create-outline" slot="start"></ion-icon>
+        </ion-button>
+      </ion-col>
+      <ion-col size="6">
+        <ion-button size="block" color="danger" [routerLink]="['/admin/devices/', device.id, 'delete']">
+          <ion-label style="font-family: Itim, sans-serif; font-size: 0.8rem;">Delete</ion-label>
+          <ion-icon name="trash-outline" slot="start"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-item>
+  </ion-card-content>
+</ion-card>
+  </div>
+</div>
+
+</ion-content>
+<ion-footer>
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-back-button style="font-family: Itim, sans-serif; font-size: 0.8rem;" text="Back" defaultHref="/admin/devices"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>
