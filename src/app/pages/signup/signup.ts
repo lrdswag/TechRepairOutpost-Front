@@ -1,7 +1,5 @@
 import {Component} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {UsersService} from '../../services';
-import {User} from '../../interfaces/user';
 import {tap} from 'rxjs/operators';
 import {Router} from '@angular/router';
 
@@ -12,12 +10,10 @@ import {Router} from '@angular/router';
 })
 export class SignupPage {
     submitted = false;
-    user: User;
     form: FormGroup;
 
     constructor(
         private fb: FormBuilder,
-        private userService: UsersService,
         private router: Router
     ) {
         this.form = this.fb.group({
@@ -30,16 +26,16 @@ export class SignupPage {
         });
     }
 
-    onRegister() {
-        if (this.form.valid) {
-            if (this.form.dirty) {
-                const FormData = { ...this.user, ...this.form.value };
-                this.userService.addUser(FormData)
-                .pipe(
-                    tap(_ => console.log('Registered Successfully!')),
-                    tap(_ => this.router.navigateByUrl('/customer/dashboard'))
-                ).subscribe((data: User) => this.user = data);
-            }
-        }
-    }
+    // onRegister() {
+    //     if (this.form.valid) {
+    //         if (this.form.dirty) {
+    //             const FormData = { ...this.user, ...this.form.value };
+    //             this.userService.addUser(FormData)
+    //             .pipe(
+    //                 tap(_ => console.log('Registered Successfully!')),
+    //                 tap(_ => this.router.navigateByUrl('/customer/dashboard'))
+    //             ).subscribe((data: User) => this.user = data);
+    //         }
+    //     }
+    // }
 }
